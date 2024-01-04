@@ -12,7 +12,7 @@ const ProductCard = ({ product, addToCart }) => {
     <div>
       
       <img src={product.thumbnail} alt="Product" />
-      <h3>{product.title}</h3>
+      <h3 >{product.title}</h3>
       <p>$ {product.price}</p>
       <button onClick={handleAddToCart}>Add to Cart</button>
     </div>

@@ -41,7 +41,7 @@ const Login = ({ setToken }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button className="hover:bg-black"onClick={handleLogin}>Login</button>
     </div>
   );
 };

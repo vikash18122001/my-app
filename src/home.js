@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import SearchBar from './SearchBar';
 import PriceFilter from './PriceFliter';
+import {useNavigate } from 'react-router-dom';
 
 const Home = ({ token, isLoggedIn }) => {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ const Home = ({ token, isLoggedIn }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [priceFilter, setPriceFilter] = useState('');
 
- 
+  const navigate = useNavigate();
 
   useEffect(() => {
     
@@ -47,6 +48,14 @@ const Home = ({ token, isLoggedIn }) => {
   const handlePriceFilter = (value) => {
     setPriceFilter(value);
   };
+  
+    
+  
+    const handleButtonClick = () => {
+     
+      navigate('/cart');
+    };
+  
 
   const applyPriceFilter = (filteredProducts) => {
     if (priceFilter === 'lowToHigh') {
@@ -71,6 +80,7 @@ const Home = ({ token, isLoggedIn }) => {
 
   return (
     <div>
+      <button onClick={handleButtonClick}>Cart</button>
       <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
       <PriceFilter onPriceChange={handlePriceFilter} />
 

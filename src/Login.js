@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from 'react';
 
 const Login = ({ setToken }) => {
@@ -16,7 +15,7 @@ const Login = ({ setToken }) => {
       });
 
       const data = await response.json();
-      console.log(data);
+     
 
       if (data.token) {
         setToken(data.token);

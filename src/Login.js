@@ -15,12 +15,11 @@ const Login = ({ setToken }) => {
       });
 
       const data = await response.json();
-     
 
       if (data.token) {
         setToken(data.token);
       } else {
-        console.log("token is not found")
+        console.log("token is not found");
       }
     } catch (error) {
       console.error('Login error:', error);
@@ -28,20 +27,28 @@ const Login = ({ setToken }) => {
   };
 
   return (
-    <div>
+    <div className="max-w-md mx-auto my-10 p-6 bg-white border rounded-md shadow-md">
+      <h1 className="text-2xl font-bold mb-4">Login</h1>
       <input
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        className="w-full p-2 mb-4 border rounded-md"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        className="w-full p-2 mb-4 border rounded-md"
       />
-      <button className="hover:bg-black"onClick={handleLogin}>Login</button>
+      <button
+        onClick={handleLogin}
+        className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+      >
+        Login
+      </button>
     </div>
   );
 };

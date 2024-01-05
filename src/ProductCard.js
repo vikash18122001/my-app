@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from './Redux/actions';
+import toast from 'react-hot-toast';
+
 
 const ProductCard = ({ product, addToCart }) => {
   const handleAddToCart = () => {
     addToCart(product);
+    toast.success("added to cart");
   };
 
   return (

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './Login';
 import Home from './home';
 import Cart from './Cart';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const [token, setToken] = useState('');
@@ -40,6 +41,10 @@ const App = () => {
             element={<ProtectedRoute element={<Cart />} />}
           />
         </Routes>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
       </div>
     </Router>
   );

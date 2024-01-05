@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const Login = ({ setToken }) => {
   const [username, setUsername] = useState('');
@@ -17,11 +18,14 @@ const Login = ({ setToken }) => {
       const data = await response.json();
 
       if (data.token) {
+        toast.success("Login Successfull");
         setToken(data.token);
       } else {
+        toast.error("Login Failed");
         console.log("token is not found");
       }
     } catch (error) {
+      
       console.error('Login error:', error);
     }
   };

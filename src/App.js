@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Home from './home';
-import Cart from './Cart';
+import Cart from './cart.js';
 import { Toaster } from 'react-hot-toast';
 
 const App = () => {

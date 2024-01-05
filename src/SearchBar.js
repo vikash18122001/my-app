@@ -2,8 +2,9 @@ import React from 'react';
 
 const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
-    <div>
+    <div className="mb-4">
       <input
+        className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
         type="text"
         placeholder="Search products by name"
         value={searchTerm}
@@ -14,3 +15,4 @@ const SearchBar = ({ searchTerm, onSearchChange }) => {
 };
 
 export default SearchBar;
+

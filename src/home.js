@@ -68,7 +68,7 @@ const Home = ({ token, isLoggedIn }) => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>loading......</p>;
   }
 
   const filteredProducts = products
@@ -79,18 +79,25 @@ const Home = ({ token, isLoggedIn }) => {
   const filteredAndSortedProducts = applyPriceFilter(filteredProducts);
 
   return (
-    <div>
-      <button onClick={handleButtonClick}>Cart</button>
-      <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
-      <PriceFilter onPriceChange={handlePriceFilter} />
+    <div className='bg-stone-400'>
+   <div className='flex items-center space-x-4'>
+  <SearchBar searchTerm={searchTerm} onSearchChange={handleSearch} />
+  <PriceFilter onPriceChange={handlePriceFilter} />
+  <button className='bg-blue-500 text-white px-4 py-2 rounded-md' onClick={handleButtonClick}>
+    Cart
+  </button>
+</div>
 
+
+      <div className='flex flex-wrap gap-4'>
       {filteredAndSortedProducts.length === 0 ? (
         <p>No products available</p>
       ) : (
         filteredAndSortedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <  ProductCard key={product.id} product={product} />
         ))
       )}
+      </div>
     </div>
   );
 };

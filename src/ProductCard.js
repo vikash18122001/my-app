@@ -5,16 +5,20 @@ import { addToCart } from './Redux/actions';
 const ProductCard = ({ product, addToCart }) => {
   const handleAddToCart = () => {
     addToCart(product);
-   
   };
 
   return (
-    <div >
-      <div className='flex'>
-      <div><img src={product.thumbnail} alt="Product" /></div>
-      <div >{product.title}</div>
-      <div>$ {product.price}</div>
-      <div><button onClick={handleAddToCart}>Add to Cart</button></div>
+    <div className="p-4 bg-white rounded-md shadow-md">
+      <div className="flex flex-col items-center gap-4">
+        <img className="w-48 h-48 object-cover rounded-md" src={product.thumbnail} alt="Product" />
+        <div className="text-xl font-bold">{product.title}</div>
+        <div className="text-gray-700">${product.price}</div>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue"
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

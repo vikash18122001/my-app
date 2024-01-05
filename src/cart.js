@@ -17,15 +17,18 @@ const Cart = () => {
   }, {});
 
   return (
-    <div>
-      <p>Cart Count: {cartCount}</p>
-      <p>Total Amount: ${totalAmount.toFixed(2)}</p>
-      <ul>
+    <div className=" p-4 rounded-md shadow-md">
+      <p className="text-lg font-semibold mb-4">Shopping Cart</p>
+      <p className="text-gray-700 font-semibold">Cart Count: {cartCount}</p>
+      <p className="text-gray-700 font-semibold">Total Amount: ${totalAmount.toFixed(2)}</p>
+      <ul className="mt-4">
         {Object.values(groupedItems).map(item => (
-          <li key={item.id}>
-            <img src={item.thumbnail} alt={item.title} />
-            <p>{item.title}</p>
-            {item.quantity > 1 && <p>Quantity: {item.quantity}</p>}
+          <li key={item.id} className="flex items-center mb-4">
+            <img src={item.thumbnail} alt={item.title} className="w-12 h-12 object-cover rounded-md mr-4" />
+            <div>
+              <p className="text-gray-800">{item.title}</p>
+              {item.quantity > 1 && <p className="text-gray-600">Quantity: {item.quantity}</p>}
+            </div>
           </li>
         ))}
       </ul>
